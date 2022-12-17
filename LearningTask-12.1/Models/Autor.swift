@@ -33,7 +33,7 @@ struct Autor: Decodable {
         case fotoURI = "profilePicturePath"
         case nome = "firstName"
         case sobrenome = "lastName"
-        case tecnologias = "technologiesSHeWritesAbout"
+        case tecnologias = "technologies"
     }
 }
 

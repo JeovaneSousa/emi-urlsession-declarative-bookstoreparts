@@ -20,6 +20,8 @@
 		5846DE8D288ED58800DF985F /* TecnologiaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5846DE8C288ED58800DF985F /* TecnologiaViewCell.swift */; };
 		5846DE8F288EE59C00DF985F /* SimpleAlert+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5846DE8E288EE59C00DF985F /* SimpleAlert+UIAlertController.swift */; };
 		5846DE92288EF33800DF985F /* NovaTecnologiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5846DE91288EF33800DF985F /* NovaTecnologiaViewController.swift */; };
+		5865B860294E2C5500E6B23D /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865B85F294E2C5500E6B23D /* UserAuthentication.swift */; };
+		5865B862294E315A00E6B23D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865B861294E315A00E6B23D /* User.swift */; };
 		586D6377294E1AFC0011076E /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D6376294E1AFC0011076E /* ImageDownload.swift */; };
 		586D6379294E1B2B0011076E /* ImageFetching+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D6378294E1B2B0011076E /* ImageFetching+UIImageView.swift */; };
 		5881AC55288B1CB700F9A9CC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5881AC54288B1CB700F9A9CC /* Theme.swift */; };
@@ -56,6 +58,8 @@
 		5846DE8C288ED58800DF985F /* TecnologiaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecnologiaViewCell.swift; sourceTree = "<group>"; };
 		5846DE8E288EE59C00DF985F /* SimpleAlert+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SimpleAlert+UIAlertController.swift"; sourceTree = "<group>"; };
 		5846DE91288EF33800DF985F /* NovaTecnologiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaTecnologiaViewController.swift; sourceTree = "<group>"; };
+		5865B85F294E2C5500E6B23D /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
+		5865B861294E315A00E6B23D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		586D6376294E1AFC0011076E /* ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
 		586D6378294E1B2B0011076E /* ImageFetching+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageFetching+UIImageView.swift"; sourceTree = "<group>"; };
 		5881AC54288B1CB700F9A9CC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -172,6 +176,14 @@
 			path = NovaTecnologia;
 			sourceTree = "<group>";
 		};
+		5865B85E294E2C4500E6B23D /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				5865B85F294E2C5500E6B23D /* UserAuthentication.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		586D6375294E1AE40011076E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +225,7 @@
 		5881AC56288B1E9B00F9A9CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5865B861294E315A00E6B23D /* User.swift */,
 				5881AC59288B1EC300F9A9CC /* Autor.swift */,
 				5881AC57288B1EAF00F9A9CC /* Livro.swift */,
 				58089E3C289AE623001F8607 /* Carrinho.swift */,
@@ -323,6 +336,7 @@
 				5881AC53288B1C9C00F9A9CC /* Supportive Files */,
 				58C67261288B0ED200E8FD01 /* Assets.xcassets */,
 				5881AC4F288B1C7300F9A9CC /* Common */,
+				5865B85E294E2C4500E6B23D /* Persistence */,
 				586D6375294E1AE40011076E /* Networking */,
 				5881AC5B288B1ED600F9A9CC /* API */,
 				5881AC56288B1E9B00F9A9CC /* Models */,
@@ -407,6 +421,7 @@
 				58089E4E289AE794001F8607 /* CarrinhoViewController.swift in Sources */,
 				5881AC70288B246600F9A9CC /* NovoAutorViewController.swift in Sources */,
 				5846DE8F288EE59C00DF985F /* SimpleAlert+UIAlertController.swift in Sources */,
+				5865B862294E315A00E6B23D /* User.swift in Sources */,
 				5881AC5D288B1EF500F9A9CC /* AutoresAPI.swift in Sources */,
 				58089E3B289AE503001F8607 /* LivrosListViewController.swift in Sources */,
 				5881AC5F288B1F0500F9A9CC /* LivrosAPI.swift in Sources */,
@@ -426,6 +441,7 @@
 				5881AC65288B1F9500F9A9CC /* TableSectionHeaderView.swift in Sources */,
 				58C67259288B0ECF00E8FD01 /* AppDelegate.swift in Sources */,
 				5881AC6B288B240E00F9A9CC /* AutoresListViewController.swift in Sources */,
+				5865B860294E2C5500E6B23D /* UserAuthentication.swift in Sources */,
 				5846DE8D288ED58800DF985F /* TecnologiaViewCell.swift in Sources */,
 				5881AC75288B24BF00F9A9CC /* AutorTableHeaderView.swift in Sources */,
 				5881AC55288B1CB700F9A9CC /* Theme.swift in Sources */,

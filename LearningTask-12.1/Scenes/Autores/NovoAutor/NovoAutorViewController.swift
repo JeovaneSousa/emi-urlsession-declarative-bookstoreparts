@@ -15,6 +15,7 @@ class NovoAutorViewController: UIViewController {
 
     typealias MensagemDeValidacao = String
     
+    @IBOutlet weak var fotoImageView: UIImageView!
     @IBOutlet weak var fotoTextField: UITextField!
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var bioTextField: UITextField!
@@ -125,6 +126,20 @@ extension NovoAutorViewController: UITableViewDataSource {
         
         celula.tecnologia = tecnologias[indexPath.row]
         return celula
+    }
+    
+}
+
+extension NovoAutorViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let urlString = fotoTextField.text,
+              let url = URL(string: urlString) else {
+            return
+        }
+        
+        fotoImageView.setImageByDowloading(url: url,
+                                           placeholderImage: .init(named: "Avatar"))
     }
     
 }

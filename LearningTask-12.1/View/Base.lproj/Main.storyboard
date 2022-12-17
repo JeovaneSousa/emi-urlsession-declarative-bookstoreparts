@@ -200,13 +200,25 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZHJ-Hb-fKp" userLabel="Content Container Stack View">
                                         <rect key="frame" x="0.0" y="64" width="414" height="726"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ms1-fB-Ury" userLabel="Avatar Image View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-ot-MKS" userLabel="Image Wrapper Stack View">
                                                 <rect key="frame" x="20" y="0.0" width="374" height="100"/>
-                                                <color key="tintColor" name="Sawtooth Aak"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="i2Z-54-cL7"/>
-                                                </constraints>
-                                            </imageView>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ms1-fB-Ury" userLabel="Avatar Image View">
+                                                        <rect key="frame" x="137" y="0.0" width="100" height="100"/>
+                                                        <color key="tintColor" name="Sawtooth Aak"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ms1-fB-Ury" secondAttribute="height" multiplier="1:1" id="1CH-Tc-LVY"/>
+                                                            <constraint firstAttribute="height" constant="100" id="i2Z-54-cL7"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="50"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lAF-Ak-UBl" userLabel="Form Stack View">
                                                 <rect key="frame" x="20" y="120" width="374" height="518"/>
                                                 <subviews>
@@ -224,6 +236,9 @@
                                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="X58-U0-3mE" id="N6Y-Mn-zFm"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -387,6 +402,7 @@
                     </view>
                     <connections>
                         <outlet property="bioTextField" destination="4dB-UI-n9z" id="3Lm-Y2-h3I"/>
+                        <outlet property="fotoImageView" destination="ms1-fB-Ury" id="z1W-oh-8kd"/>
                         <outlet property="fotoTextField" destination="IwK-vP-Kr0" id="bqY-e7-hK0"/>
                         <outlet property="nomeTextField" destination="uNB-m5-FqD" id="mpf-do-2Jc"/>
                         <outlet property="tecnologiasTableView" destination="a7c-XL-Qfd" id="BZ4-Fh-AuH"/>

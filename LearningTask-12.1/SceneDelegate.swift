@@ -7,6 +7,17 @@
 
 import UIKit
 
+/**
+ Token para simular a authenticação de um usuário
+ (ou você pode implementar a funcionalidade de login futuramente 😎🚀)
+ 
+ * Você pode obter um novo token em https://casadocodigo-api.herokuapp.com/swagger-ui/index.html#/authentication-controller/authenticateUsingPOST utilizando as credenciais abaixo
+ 
+ * * email: "admin@casadocodigo.com.br"
+ * * senha: "123456"
+ */
+let tokenValue = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDYXNhIGRvIEPDs2RpZ28gQVBJIiwic3ViIjoiMiIsImlhdCI6MTY3MTI5NzQ2NSwiZXhwIjoxNjcxOTAyMjY1fQ.0UzD1zdhUZMzcFTVTkyDJslJctl3IZCfZ23zBmxMKmg"
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -17,7 +28,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let autorAPI = AutoresAPI()
+        // MARK: - simulação de um login
+        let authentication = Authentication(
+            token: tokenValue,
+            user: .init(
+                id: nil,
+                email: "admin@casadocodigo.com.br",
+                fullName: "Admin da Casa"
+            )
+        )
+        
+        let userAuthentication = UserAuthentication()
+        userAuthentication.set(authentication)
+        
+        // MARK: - Setup
+        let autoresAPI = AutoresAPI()
         let livrosAPI = LivrosAPI()
         
         let tabBarController = window!.rootViewController as! UITabBarController
@@ -27,7 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let autoresListViewController = (tabBarController.viewControllers![1] as! UINavigationController).viewControllers.first as! AutoresListViewController
         
-        autoresListViewController.autorAPI = autorAPI
+        autoresListViewController.autoresAPI = autoresAPI
         autoresListViewController.livrosAPI = livrosAPI
     }
 

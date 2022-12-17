@@ -9,7 +9,9 @@ import UIKit
 
 extension UIAlertController {
     
-    static func showError(_ message: String, in controllerOnTheTop: UIViewController) {
+    static func showError(_ message: String,
+                          in topViewController: UIViewController,
+                          completion: (() -> Void)? = nil) {
         let title = "Erro"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -17,7 +19,15 @@ extension UIAlertController {
         let cancel = UIAlertAction(title: "Ok", style: .cancel)
         alert.addAction(cancel)
         
-        controllerOnTheTop.present(alert, animated: true)
+        topViewController.present(alert, animated: true, completion: completion)
+    }
+    
+}
+
+extension UIViewController {
+    
+    func alertError(_ message: String, completion: (() -> Void)? = nil) {
+        UIAlertController.showError(message, in: self, completion: completion)
     }
     
 }

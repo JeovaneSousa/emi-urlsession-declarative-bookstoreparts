@@ -14,7 +14,7 @@ class AutoresListViewController: UITableViewController {
         case verFormNovoAutor = "verFormNovoAutorSegue"
     }
 
-    var autorAPI: AutoresAPI?
+    var autoresAPI: AutoresAPI?
     var livrosAPI: LivrosAPI?
     
     var autores: [Autor] = [] {
@@ -39,7 +39,7 @@ class AutoresListViewController: UITableViewController {
     }
     
     private func carregaAutores() {
-        autorAPI?.listaTodos(completionHandler: { [weak self] autores in
+        autoresAPI?.listaTodos(completionHandler: { [weak self] autores in
             self?.autores = autores
             
         }, failureHandler:{ error in
